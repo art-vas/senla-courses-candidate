@@ -1,13 +1,45 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>senla1</title>
 </head>
 
 <body>
-    <p>senla1</p>
+    <div>
+        <p>senla1</p>
+        <input id="textInput" value="" type="text" name="l">
+        <button>Отправить</button>
+        <div id="result"></div>
+    </div>
     <script>
+        var btn = document.body.querySelector("button");
+        var result = document.body.querySelector("#result");
+        btn.addEventListener("click", addNewSheep);
+
+        // Solution #1
+        var elementInput = document.getElementById("textInput") 
+        var inputValue;
+        elementInput.addEventListener('input', handleInput);
+
+        function handleInput(e) {
+            inputValue = e.target.value;
+        }
+
+        function addNewSheep() {
+            var number = parseInt(inputValue);
+            var sheep = "";
+        
+            for (var i=1; i < number+1;++i){
+                sheep += i +"sheep...";
+            
+            }
+            
+            var paragraph = document.createElement('p');
+            paragraph.innerText = sheep;
+            result.appendChild(paragraph);
+        }
     </script>
 </body>
 
