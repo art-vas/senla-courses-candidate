@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>senla 2</title>
@@ -7,7 +8,43 @@
 
 <body>
     <p>senla 2</p>
+    <div>
+        <input id="textInput" type="text" name="a">
+        <button>Отправить</button>
+
+        <div id="result">
+        </div>
+    </div>
     <script>
+        var btn = document.body.querySelector("button")
+        var result = document.getElementById("result");
+        var elementInput = document.getElementById("textInput")
+        var div = document.createElement("div");
+        elementInput.addEventListener('input', handleInput);
+        btn.addEventListener('click', onClick);
+
+        var par = document.createElement("div");
+        
+        function handleInput(e) {
+            inputValue = e.target.value;
+            console.log(inputValue);
+        }
+
+        div.style = "width: 70px; height: 70px; background-color: black";
+        par.style = "width: 70px; height: 70px; margin:5px; background-color: black; display: inline-block;";
+
+        function onClick(){
+            var matrix;
+            for(var i =0; i< 5; i++) {
+                var row = document.createElement('div');
+                for (var j = 0; j < 5; j++) {
+                    // матрица. row из div'ов
+                }
+            }
+        }
+
+
+        
     </script>
 </body>
 
