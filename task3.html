@@ -33,7 +33,9 @@
             var arr = inputValue.split(' ');;
 
             var min = Math.min.apply(Math, arr.map(function(str) { return str.length; }));
-            console.log('The shortest lenght of the work: ', min);
+            var paragraph = document.createElement('p');
+            paragraph.innerText = 'The shortest lenght of the work: ' + min; 
+            result.appendChild(paragraph);
         }
 
     </script>
