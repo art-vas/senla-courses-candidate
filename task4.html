@@ -8,6 +8,32 @@
 <body>
     <p>senla 4</p>
     <script>
+        function getDimensionalArray(arr, num) {
+            var a = [];
+            var v = 0;
+            for (var i = 0; i < arr.length / num; i++) {
+                a.push(arr.slice(v, num + v));
+                v += num
+            }
+            console.log(a);
+        }
+
+        var arr = [0, 1, 2, 3, 4, 5];
+        var arr1 = [0, 1, 2, 3, 4, 5, 6];
+        var arr2 = [0, 1, 2, 3, 4, 5, 6, 7];
+
+        getDimensionalArray(arr, 3);
+        getDimensionalArray(arr1, 3);
+        getDimensionalArray(arr2, 3);
+
+        getDimensionalArray(arr, 2);
+        getDimensionalArray(arr1, 2);
+        getDimensionalArray(arr2, 2);
+
+        getDimensionalArray(arr, 1);
+        getDimensionalArray(arr1, 1);
+        getDimensionalArray(arr2, 1);
+        
     </script>
 </body>
 
