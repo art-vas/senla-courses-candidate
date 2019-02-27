@@ -7,7 +7,35 @@
 
 <body>
     <p>senla 3</p>
+
+    <input id="textInput" type="text" value="">
+    <button>Отправить</button>
+
+    <div id="result"></div>
+
     <script>
+        var btn = document.body.querySelector("button")
+        const input = document.getElementById('data');
+        var elementInput = document.getElementById("textInput")
+
+        elementInput.addEventListener('input', handleInput);
+        btn.addEventListener('click', onClick);
+
+        function handleInput(e) {
+            inputValue = e.target.value;
+        }
+        
+        function onClick() {
+            shortestWord();
+        }
+
+        function shortestWord() {
+            var arr = inputValue.split(' ');;
+
+            var min = Math.min.apply(Math, arr.map(function(str) { return str.length; }));
+            console.log('The shortest lenght of the work: ', min);
+        }
+
     </script>
 </body>
 
