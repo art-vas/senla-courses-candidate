@@ -8,6 +8,33 @@
 <body>
     <p>senla 6</p>
     <script>
+                function getLowerestIndex(arr, sym) {
+            var biggerWord = arr.reduce(function(a, b) {
+                return a.length >= b.length ? a : b;
+            }); 
+            var width = biggerWord.length + 4;
+
+            var newArr = arr.map(function(a) {
+                var dop = width - (a.length + 4);
+                var dopSpace = ' '.repeat(dop);
+
+                return a = sym + ' ' + a + dopSpace + ' ' + sym;
+            });
+            
+            var border = sym.repeat(width);
+
+            newArr.push(border);
+            newArr.unshift(border);
+
+            var a = newArr.join('\n') 
+
+            console.log(a);
+        }
+
+        var arr = ['Create', 'a', 'frame'];
+
+        getLowerestIndex(arr, '+');
+
     </script>
 </body>
 
