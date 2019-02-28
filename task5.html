@@ -8,6 +8,23 @@
 <body>
     <p>senla 5</p>
     <script>
+        function getLowerestIndex(arr, num) {
+            arr.push(num);
+            
+            var sortedArr = arr.sort(function(a, b) {
+                return a - b;
+            });
+
+            var lower = sortedArr[0];
+            
+            console.log('Lower element in array is ', lower)
+        }
+
+        var arr = [1, 2, 3, 4];
+
+        getLowerestIndex(arr, 1.5);
+        getLowerestIndex(arr, 0.5);
+        
     </script>
 </body>
 
